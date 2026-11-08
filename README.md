@@ -2,6 +2,8 @@
 
 Decklight is a lightweight virtual action deck for Windows, macOS and Linux. It uses Tauri and the system webview instead of bundling a browser. The interface is available in French, English, Spanish, German, Italian, Portuguese, Chinese and Japanese.
 
+![Decklight streaming profile](docs/screenshots/decklight-en.png)
+
 ## Features in 0.1
 
 - Virtual layouts for Mini, Original/MK.2, XL, Neo, Plus, Plus XL and Pedal, plus custom grids.
