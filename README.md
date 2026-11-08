@@ -19,7 +19,7 @@ Keyboard actions may need macOS Accessibility permission or a supported X11/Wayl
 
 ## Install and build
 
-Download the build for your system from GitHub Actions artifacts. macOS builds are unsigned; Windows and Linux builds are not yet code signed. To build locally, install Rust, Node.js 22 and the [Tauri 2 prerequisites](https://v2.tauri.app/start/prerequisites/), then run:
+Download the build for your system from the [v0.1.0 preview release](https://github.com/jeremdevgit/decklight/releases/tag/v0.1.0). macOS builds are unsigned; Windows and Linux builds are not yet code signed. To build locally, install Rust, Node.js 22 and the [Tauri 2 prerequisites](https://v2.tauri.app/start/prerequisites/), then run:
 
 ```sh
 npm ci
