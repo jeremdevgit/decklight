@@ -1,0 +1,27 @@
+[package]
+name = "decklight"
+version = "0.1.0"
+description = "Lightweight virtual action deck"
+authors = ["jeremdevgit"]
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+enigo = "0.6.1"
+url = "2"
+elgato-streamdeck = "0.14.0"
+serde = { version = "1", features = ["derive"] }
+image = { version = "0.25", default-features = false }
+font8x8 = "0.3"
+opener = "0.9"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
+opt-level = "s"
