@@ -6,7 +6,7 @@ Decklight is a lightweight virtual action deck for Windows, macOS and Linux. It 
 
 ## Features in 0.1
 
-- Virtual layouts for Mini, Original/MK.2, XL, Neo, Plus, Plus XL and Pedal, plus custom grids.
+- Virtual layouts for Mini, Original/MK.2, XL, Neo, Plus, Plus XL, Pedal, Studio and Mobile, plus custom grids.
 - USB device detection, key image updates and key presses for models supported by the `elgato-streamdeck` Rust driver. Plus and Plus XL encoder presses and turns can each have separate actions.
 - Multiple profiles, pages and folder shortcuts.
 - Website and file opening, keyboard shortcuts, text typing, media keys, delays and sequential actions.
