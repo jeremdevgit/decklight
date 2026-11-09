@@ -102,11 +102,10 @@ function controllers(page) {
   return Array.isArray(page.Controllers) ? page.Controllers.filter(x => x && typeof x.Actions === 'object') : [];
 }
 
-function imageFor(files,base,coord,state,report) {
-  const name = text(state?.Image);
-  if (!/^[\w.-]+\.(png|jpg|jpeg|webp)$/i.test(name)) return '';
-  const path = `${base}${coord}/CustomImages/${name}`;
-  const bytes = files[path];
+function imageFor(files,base,coord,state,raw,report) {
+  const name = text(state?.Image || raw?.Encoder?.Icon);
+  if (!/^(?:Images\/)?[\w.-]+\.(png|jpg|jpeg|webp)$/i.test(name)) return '';
+  const bytes = files[`${base}${coord}/CustomImages/${name}`] || files[`${base}${name}`];
   if (!bytes || bytes.length > MAX_IMAGE || report.imageBytes + bytes.length > MAX_IMAGE_TOTAL) {report.skippedImages++; return '';}
   report.imageBytes += bytes.length;
   const mime = /\.png$/i.test(name)?'image/png':/\.webp$/i.test(name)?'image/webp':'image/jpeg';
@@ -123,12 +122,13 @@ function pageFrom(files,path,pageManifest,columns,rows,report) {
     for (const [coord,raw] of Object.entries(controller.Actions)) {
       if (!/^\d+,\d+$/.test(coord) || !raw || typeof raw !== 'object') continue;
       const [x,y] = coord.split(',').map(Number);
-      const pos = encoder ? columns*rows+x : y*columns+x;
-      if (x >= columns || !encoder && y >= rows || pos >= 128 || keys.some(k=>k.pos===pos)) {report.skippedActions++; continue;}
+      const dialIndex=encoder && x===0?y:x;
+      const pos = encoder ? columns*rows+dialIndex : y*columns+x;
+      if (!encoder && (x >= columns || y >= rows) || pos >= 128 || keys.some(k=>k.pos===pos)) {report.skippedActions++; continue;}
       const state = Array.isArray(raw.States) ? raw.States[Math.max(0,Number(raw.State)||0)] || raw.States[0] : {};
       const action = convertAction(raw,report);
       const key = {pos,label:clean(state?.Title || raw.Name || raw.UUID) || 'Stream Deck',icon:'',color,action,elgato:raw};
-      const image = imageFor(files,base,coord,state,report);
+      const image = imageFor(files,base,coord,state,raw,report);
       if (image) key.image=image;
       keys.push(key);
       report.actions++;

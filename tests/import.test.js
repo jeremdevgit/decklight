@@ -48,6 +48,21 @@ test('imports a backup containing nested profile archives',()=>{
   assert.equal(result.profiles[0].name,'Nested');
 });
 
+test('reads V3 backup image paths and encoder row coordinates',()=>{
+  const png=Uint8Array.from(Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScLttAAAAABJRU5ErkJggg==','base64'));
+  const root='ProfilesV3/ABC.sdProfile/';
+  const page=`${root}Profiles/PAGE/`;
+  const dial={...action('com.elgato.streamdeck.system.text',{text:'Dial'},'Dial'),Encoder:{Icon:'Images/icon.png'}};
+  const bundle=archive({
+    [`${root}manifest.json`]:JSON.stringify({Name:'Recent',Device:{Model:'20GBD9901'},Pages:{Pages:['PAGE']},Version:'3.0'}),
+    [`${page}manifest.json`]:JSON.stringify({Name:'Main',Controllers:[{Type:'Encoder',Actions:{'0,2':dial}}]}),
+    [`${page}Images/icon.png`]:png
+  });
+  const result=importStreamDeckArchive(bundle);
+  assert.equal(result.profiles[0].pages[0].keys[0].pos,10);
+  assert.ok(result.profiles[0].pages[0].keys[0].image.startsWith('data:image/png;base64,'));
+});
+
 test('rejects path traversal and missing profile archives',()=>{
   assert.throws(()=>importStreamDeckArchive(archive({'../ABC.sdProfile/manifest.json':'{}'})),/archive-path/);
   assert.throws(()=>importStreamDeckArchive(archive({'other.json':'{}'})),/no-profiles/);
