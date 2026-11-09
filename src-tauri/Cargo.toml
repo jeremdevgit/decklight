@@ -1,6 +1,6 @@
 [package]
 name = "decklight"
-version = "0.1.0"
+version = "0.2.0"
 description = "Lightweight virtual action deck"
 authors = ["jeremdevgit"]
 edition = "2021"
