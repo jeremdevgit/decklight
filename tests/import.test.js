@@ -55,7 +55,7 @@ test('reads V3 backup image paths and encoder row coordinates',()=>{
   const dial={...action('com.elgato.streamdeck.system.text',{text:'Dial'},'Dial'),Encoder:{Icon:'Images/icon.png'}};
   const bundle=archive({
     [`${root}manifest.json`]:JSON.stringify({Name:'Recent',Device:{Model:'20GBD9901'},Pages:{Pages:['PAGE']},Version:'3.0'}),
-    [`${page}manifest.json`]:JSON.stringify({Name:'Main',Controllers:[{Type:'Encoder',Actions:{'0,2':dial}}]}),
+    [`${page}manifest.json`]:JSON.stringify({Name:'Main',Controllers:[{Type:'Keypad',Actions:null},{Type:'Encoder',Actions:{'0,2':dial}}]}),
     [`${page}Images/icon.png`]:png
   });
   const result=importStreamDeckArchive(bundle);

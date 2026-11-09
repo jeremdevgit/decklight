@@ -99,7 +99,7 @@ function convertAction(raw, report) {
 
 function controllers(page) {
   if (page.Actions && typeof page.Actions === 'object') return [{Type:'Keypad',Actions:page.Actions}];
-  return Array.isArray(page.Controllers) ? page.Controllers.filter(x => x && typeof x.Actions === 'object') : [];
+  return Array.isArray(page.Controllers) ? page.Controllers.filter(x => x?.Actions && typeof x.Actions === 'object') : [];
 }
 
 function imageFor(files,base,coord,state,raw,report) {
