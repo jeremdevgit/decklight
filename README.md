@@ -1,4 +1,10 @@
+<p align="center"><img src="src-tauri/icons/128x128.png" width="96" alt=""></p>
+
 # Decklight
+
+[![CI](https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml/badge.svg)](https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml) [![CodeQL](https://github.com/jeremdevgit/decklight/actions/workflows/codeql.yml/badge.svg)](https://github.com/jeremdevgit/decklight/actions/workflows/codeql.yml)
+
+**English** · [Français](README.fr.md) · [Español](README.es.md)
 
 Decklight is a lightweight virtual action deck for Windows, macOS and Linux. It uses Tauri and the system webview instead of bundling a browser. The interface is available in French, English, Spanish, German, Italian, Portuguese, Chinese and Japanese.
 
@@ -43,3 +49,20 @@ Profiles live in the webview's local application storage. Export them regularly 
 - Author: jeremdevgit
 
 Decklight is an independent project and is not affiliated with Elgato or Corsair. Stream Deck is a trademark of its owner. The USB driver is [elgato-streamdeck](https://github.com/OpenActionAPI/rust-elgato-streamdeck), licensed MPL-2.0.
+
+## My other software
+
+All free, open source and ad-free — [github.com/jeremdevgit](https://github.com/jeremdevgit):
+
+| Software | Platform | In short |
+|---|---|---|
+| [AutoDex](https://github.com/jeremdevgit/autodex) | Windows, macOS, Linux | Car collection game with on-device photo recognition |
+| [Boîte à outils](https://github.com/jeremdevgit/boite-a-outils) | Windows, macOS | Computer maintenance, cleanup and file search |
+| [Carnet de notes](https://github.com/jeremdevgit/carnet-rust) | Windows | Encrypted notebooks and experimental sync |
+| [JMeca](https://github.com/jeremdevgit/jmeca) | Windows, macOS, Linux | Encrypted vehicle maintenance tracker |
+| [LJ Hub](https://github.com/jeremdevgit/lj-hub) | Windows, macOS, Linux | Logitech device profile manager |
+| [Pomme](https://github.com/jeremdevgit/pomme) | Windows | Apple Music and local music player |
+| [rJb](https://github.com/jeremdevgit/rjb) | Windows | RGB lighting control |
+| [Ludothèque](https://github.com/jeremdevgit/ludotheque) | macOS | Game library and launcher |
+| [Suite Libre](https://jeremdevgit.github.io/suite-libre/) | Browser | Six tools without an account |
+| [Batailles de France](https://github.com/jeremdevgit/batailles-de-france) | Browser | Real-time strategy game |

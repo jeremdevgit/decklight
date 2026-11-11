@@ -1,4 +1,10 @@
+<p align="center"><img src="src-tauri/icons/128x128.png" width="96" alt=""></p>
+
 # Decklight
+
+[![CI](https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml/badge.svg)](https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml) [![CodeQL](https://github.com/jeremdevgit/decklight/actions/workflows/codeql.yml/badge.svg)](https://github.com/jeremdevgit/decklight/actions/workflows/codeql.yml)
+
+[English](README.md) · [Français](README.fr.md) · **Español**
 
 Decklight es un panel virtual ligero de acciones para Windows, macOS y Linux. La interfaz está disponible en francés, inglés, español, alemán, italiano, portugués, chino y japonés. Utiliza Tauri y el motor web del sistema.
 
@@ -13,3 +19,20 @@ La versión 0.2 ofrece paneles virtuales Mini, Original/MK.2, XL, Neo, Plus, Plu
 Descarga la [versión preliminar v0.2.0](https://github.com/jeremdevgit/decklight/releases/tag/v0.2.0) para tu sistema. Para compilar, instala Rust, Node.js 22 y los [requisitos de Tauri 2](https://v2.tauri.app/start/prerequisites/), y ejecuta `npm ci` y `npm run desktop:build`. Exporta tus perfiles en JSON para hacer copias de seguridad y revisa las acciones de los perfiles importados.
 
 Decklight es independiente de Elgato y Corsair. Licencia GPL-3.0-or-later; autor: jeremdevgit.
+
+## Mis otros programas
+
+Todos libres, gratuitos y sin publicidad — [github.com/jeremdevgit](https://github.com/jeremdevgit):
+
+| Programa | Plataforma | En resumen |
+|---|---|---|
+| [AutoDex](https://github.com/jeremdevgit/autodex) | Windows, macOS, Linux | Juego de colección de coches con reconocimiento de fotos en el dispositivo |
+| [Boîte à outils](https://github.com/jeremdevgit/boite-a-outils) | Windows, macOS | Mantenimiento del ordenador, limpieza y búsqueda de archivos |
+| [Carnet de notes](https://github.com/jeremdevgit/carnet-rust) | Windows | Cuadernos cifrados y sincronización experimental |
+| [JMeca](https://github.com/jeremdevgit/jmeca) | Windows, macOS, Linux | Seguimiento de mantenimiento de vehículos cifrado |
+| [LJ Hub](https://github.com/jeremdevgit/lj-hub) | Windows, macOS, Linux | Gestor de perfiles para dispositivos Logitech |
+| [Pomme](https://github.com/jeremdevgit/pomme) | Windows | Reproductor de música para Apple Music y archivos locales |
+| [rJb](https://github.com/jeremdevgit/rjb) | Windows | Control de la iluminación RGB |
+| [Ludothèque](https://github.com/jeremdevgit/ludotheque) | macOS | Biblioteca y lanzador de juegos |
+| [Suite Libre](https://jeremdevgit.github.io/suite-libre/) | Navegador | Seis herramientas sin cuenta |
+| [Batailles de France](https://github.com/jeremdevgit/batailles-de-france) | Navegador | Juego de estrategia en tiempo real |
