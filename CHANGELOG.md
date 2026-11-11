@@ -1,5 +1,13 @@
 # Changelog / Journal des changements
 
+## 0.2.1 — 2026-11-11
+
+- Ship installers on every platform: a universal macOS disk image (`.dmg`, Apple silicon and Intel) replaces the ZIP archives, and Linux gains an AppImage next to the `.deb`.
+- Release files come with a `SHA256SUMS.txt` checksum list.
+
+- Installateurs sur toutes les plateformes : une image disque macOS universelle (`.dmg`, Apple silicon et Intel) remplace les archives ZIP, et Linux reçoit un AppImage en plus du `.deb`.
+- Les fichiers de la version sont accompagnés d’une liste de sommes de contrôle `SHA256SUMS.txt`.
+
 ## 0.2.0 — 2026-11-10
 
 - Import Stream Deck `.streamDeckProfile` exports and profile backup archives with pages, actions, images and retained original action settings. A preview reports unsupported actions before applying the import.
