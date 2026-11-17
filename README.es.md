@@ -1,38 +1,80 @@
-<p align="center"><img src="src-tauri/icons/128x128.png" width="96" alt=""></p>
+<p align="center"><img src="src-tauri/icons/128x128.png" width="112" alt=""></p>
 
-# Decklight
+<h1 align="center">Decklight</h1>
 
-[![CI](https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml/badge.svg)](https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml) [![CodeQL](https://github.com/jeremdevgit/decklight/actions/workflows/codeql.yml/badge.svg)](https://github.com/jeremdevgit/decklight/actions/workflows/codeql.yml)
+<p align="center"><b>Un Stream Deck virtual y ligero que controla los modelos USB compatibles e importa perfiles de Stream Deck.</b></p>
 
-[English](README.md) · [Français](README.fr.md) · **Español**
+<p align="center"><img src="https://img.shields.io/badge/%F0%9F%9B%A0%EF%B8%8F%20System%20%26%20hardware-Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-2f6fde?style=flat-square" alt="Sistema y hardware"> <a href="https://github.com/jeremdevgit/decklight/releases"><img src="https://img.shields.io/github/v/release/jeremdevgit/decklight?include_prereleases&style=flat-square&label=version" alt="version"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-555?style=flat-square" alt="GPL-3.0-or-later"></a> <a href="https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml"><img src="https://github.com/jeremdevgit/decklight/actions/workflows/ci.yml/badge.svg" alt="CI"></a></p>
 
-Decklight es un panel virtual ligero de acciones para Windows, macOS y Linux. La interfaz está disponible en francés, inglés, español, alemán, italiano, portugués, chino y japonés. Utiliza Tauri y el motor web del sistema.
+<p align="center"><a href="README.md">English</a> · <a href="README.fr.md">Français</a> · <b>Español</b> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt.md">Português</a> · <a href="README.zh.md">简体中文</a> · <a href="README.ja.md">日本語</a></p>
 
-![Perfil de demostración Decklight](docs/screenshots/decklight-en.png)
+<p align="center"><a href="https://github.com/jeremdevgit/decklight/releases"><b>⬇ Descargar</b></a></p>
 
-La versión 0.2 ofrece paneles virtuales Mini, Original/MK.2, XL, Neo, Plus, Plus XL, Pedal, Studio y Mobile, además de un formato personalizado. Detecta los dispositivos USB reconocidos por el controlador Rust, actualiza sus pantallas y responde a las pulsaciones. Las pulsaciones y giros de los diales Plus admiten acciones distintas. También incluye perfiles, páginas, carpetas, atajos, teclas multimedia, apertura de sitios y archivos, texto, pausas y secuencias. Los perfiles se guardan localmente y se importan o exportan como JSON.
+![Perfil de streaming de Decklight](docs/screenshots/decklight-en.png)
 
-**Importación Stream Deck:** Decklight lee las exportaciones `.streamDeckProfile` y las copias `.StreamDeckProfilesBackup` que contienen perfiles, con páginas, acciones, imágenes y ajustes originales. Muestra un resumen antes de importar. Las acciones compatibles funcionan; las de plugins y las desconocidas permanecen visibles, pero inactivas. No importa las preferencias globales de la aplicación oficial ni instala plugins. Las imágenes grandes pueden omitirse para limitar el almacenamiento. Una exportación JSON de Decklight incluye los ajustes conservados, que pueden contener credenciales de plugins: protege ese archivo.
+Decklight es un panel de acciones virtual para Windows, macOS y Linux. Usa Tauri y el motor web del sistema en lugar de incluir un navegador, y **puede controlar Stream Deck reales por USB**. Es una versión preliminar, todavía no sustituye por completo al software oficial.
 
-**Límite actual:** no admite los modelos Studio, Mobile ni G-keys, las pantallas táctiles Plus y Neo, la ejecución de plugins Elgato ni el cambio automático de perfil. No se ha probado el USB con cada modelo real. La aplicación debe permanecer en ejecución y el software oficial puede tener que liberar el dispositivo. En macOS los atajos pueden requerir permiso de Accesibilidad; en Linux la entrada depende del servicio disponible y el USB puede requerir una [regla udev](https://github.com/OpenActionAPI/rust-elgato-streamdeck#udev-rules-for-linux).
+## De un vistazo
 
-Descarga la [versión preliminar v0.2.1](https://github.com/jeremdevgit/decklight/releases/tag/v0.2.1) para tu sistema. Para compilar, instala Rust, Node.js 22 y los [requisitos de Tauri 2](https://v2.tauri.app/start/prerequisites/), y ejecuta `npm ci` y `npm run desktop:build`. Exporta tus perfiles en JSON para hacer copias de seguridad y revisa las acciones de los perfiles importados.
+| | |
+|---|---|
+| **Categoría** | 🛠️ Sistema y hardware |
+| **Plataformas** | Windows · macOS · Linux |
+| **Interfaz** | 8 idiomas (EN, FR, ES, DE, IT, PT, ZH, JA) |
+| **Precio** | Gratis, de código abierto, sin anuncios ni telemetría |
+| **Estado** | Versión preliminar |
+| **Licencia** | [GPL-3.0-or-later](LICENSE) |
 
-Decklight es independiente de Elgato y Corsair. Licencia GPL-3.0-or-later; autor: jeremdevgit.
+## Qué hace
 
-## Mis otros programas
+- **Diseños virtuales** Mini, Original/MK.2, XL, Neo, Plus, Plus XL, Pedal, Studio y Mobile, además de cuadrículas personalizadas.
+- **Control USB** de los modelos compatibles con el controlador `elgato-streamdeck`: imágenes de teclas, pulsaciones y acciones separadas para pulsar y girar los diales de Plus/Plus XL.
+- **Acciones**: abrir webs y archivos, atajos de teclado, escribir texto, teclas multimedia, esperas y secuencias.
+- Varios **perfiles, páginas y carpetas**; nombre, símbolo y color por tecla; importación/exportación JSON.
+- **Importación de Stream Deck**: archivos `.streamDeckProfile` y `.StreamDeckProfilesBackup` con páginas, acciones, imágenes y ajustes originales, con un informe que revisar antes de añadirlos.
 
-Todos libres, gratuitos y sin publicidad — [github.com/jeremdevgit](https://github.com/jeremdevgit):
+![Vista previa de importación con datos de demostración](docs/screenshots/import-en.png)
 
-| Programa | Plataforma | En resumen |
-|---|---|---|
-| [AutoDex](https://github.com/jeremdevgit/autodex) | Windows, macOS, Linux | Juego de colección de coches con reconocimiento de fotos en el dispositivo |
-| [Boîte à outils](https://github.com/jeremdevgit/boite-a-outils) | Windows, macOS | Mantenimiento del ordenador, limpieza y búsqueda de archivos |
-| [Carnet de notes](https://github.com/jeremdevgit/carnet-rust) | Windows | Cuadernos cifrados y sincronización experimental |
-| [JMeca](https://github.com/jeremdevgit/jmeca) | Windows, macOS, Linux | Seguimiento de mantenimiento de vehículos cifrado |
-| [LJ Hub](https://github.com/jeremdevgit/lj-hub) | Windows, macOS, Linux | Gestor de perfiles para dispositivos Logitech |
-| [Pomme](https://github.com/jeremdevgit/pomme) | Windows | Reproductor de música para Apple Music y archivos locales |
-| [rJb](https://github.com/jeremdevgit/rjb) | Windows | Control de la iluminación RGB |
-| [Ludothèque](https://github.com/jeremdevgit/ludotheque) | macOS | Biblioteca y lanzador de juegos |
-| [Suite Libre](https://jeremdevgit.github.io/suite-libre/) | Navegador | Seis herramientas sin cuenta |
-| [Batailles de France](https://github.com/jeremdevgit/batailles-de-france) | Navegador | Juego de estrategia en tiempo real |
+## Hardware compatible
+
+El control USB cubre Original, Mini, MK.2, XL, Neo, Plus, Plus XL y Pedal (con sus revisiones). Studio, Mobile y las teclas G no son compatibles; las bandas táctiles del Plus, la barra de información del Neo, los plugins de Elgato y los perfiles automáticos por app no están implementados. Las acciones de plugins importadas aparecen como teclas inactivas. Decklight debe seguir abierto para controlar un dispositivo, y a veces el software oficial debe liberarlo antes. No todos los modelos se han probado físicamente.
+
+## Instalar
+
+Descarga la versión para tu sistema en la [página de versiones](https://github.com/jeremdevgit/decklight/releases). Las versiones de macOS no están firmadas; las de Windows y Linux aún no.
+
+- **macOS**: las acciones de teclado necesitan el permiso de Accesibilidad.
+- **Linux**: instala `xdg-open`, un servicio de entrada X11/Wayland para las acciones de teclado y las [reglas udev](https://github.com/OpenActionAPI/rust-elgato-streamdeck#udev-rules-for-linux) para los dispositivos Elgato.
+
+## Seguridad y privacidad
+
+- **Sin cuenta, nube, telemetría, ejecución de shell ni servidor en segundo plano.**
+- URL limitadas a HTTP, HTTPS y mailto; las acciones de archivo exigen una ruta absoluta existente; los valores nunca pasan por un shell.
+- Los archivos importados se comprueban (tamaño y estructura). Un JSON exportado puede contener ajustes de plugins importados, a veces credenciales: trátalo como dato sensible.
+
+## Compilar
+
+```sh
+# Rust, Node.js 22 y los requisitos de Tauri 2
+npm ci
+npm run desktop:dev
+npm run desktop:build
+```
+
+## Licencia
+
+GPL-3.0-or-later — ver [LICENSE](LICENSE). El controlador USB es [elgato-streamdeck](https://github.com/OpenActionAPI/rust-elgato-streamdeck) (MPL-2.0). Decklight no está afiliado a Elgato ni a Corsair; Stream Deck es una marca de su propietario.
+
+---
+
+¿Has encontrado una vulnerabilidad? Infórmala en privado (consulta [SECURITY.md](SECURITY.md)) y no en una incidencia pública.
+
+## Más software libre de jeremdevgit
+
+Todos gratuitos, de código abierto y sin anuncios.
+
+**🛠️ Sistema y hardware** — [Boîte à outils](https://github.com/jeremdevgit/boite-a-outils) · [rJb](https://github.com/jeremdevgit/rjb) · [LJ Hub](https://github.com/jeremdevgit/lj-hub)
+
+**📒 Productividad y datos** — [Carnet de notes](https://github.com/jeremdevgit/carnet-rust) · [JMeca](https://github.com/jeremdevgit/jmeca) · [Suite Libre](https://jeremdevgit.github.io/suite-libre/)
+
+**🎮 Música y juegos** — [Pomme](https://github.com/jeremdevgit/pomme) · [Ludothèque](https://github.com/jeremdevgit/ludotheque) · [AutoDex](https://github.com/jeremdevgit/autodex) · [Batailles de France](https://github.com/jeremdevgit/batailles-de-france)
